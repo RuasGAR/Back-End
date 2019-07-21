@@ -26,7 +26,7 @@ class CreateFansTable extends Migration
         
         Schema::table('fans', function (Blueprint $table){
             $table->foreign('team_id')->references('id')->on('teams')->onDelete('set null');
-        }
+        });
 
 
 

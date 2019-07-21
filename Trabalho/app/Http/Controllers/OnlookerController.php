@@ -16,7 +16,7 @@ class OnlookerController extends Controller
 		if($fan){
         	return response()->success($fan);
         } else{
-        	$data = "Not found, check the id");
+        	$data = ("Not found, check the id");
 			return response()->error($data,400);
         }
 	}
@@ -27,6 +27,7 @@ class OnlookerController extends Controller
 		$fan->cpf = $request->cpf;
 		$fan->age = $request->age;
 		$fan->email = $request->email;
+		$fan->team_id = $request->team_id;
 		$fan->save();
 
 		return response()->success($fan);
@@ -50,6 +51,10 @@ class OnlookerController extends Controller
 	public function deleteFan($id){
         Fan::destroy($id);
         return response()->success('Fan Deleted');
+	}
+	public function deleteRelation($team_id){
+		Fan::destroy($team_id);
+		return response()->success('Relation Deleted');
 	}
 
 }

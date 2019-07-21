@@ -25,5 +25,6 @@ Route::post('criaTeam', 'ClubeController@createTeam');
 Route::post('criaFan', 'OnlookerController@createFan');
 Route::put('attTeam{id}', 'ClubeController@updateTeam');
 Route::put('attFan{id}', 'OnlookerController@updateFan');
-Route::delete('deletaTeam{id}','ClubeController@deleteFan');
+Route::delete('deletaTeam{id}','ClubeController@deleteTeam');
 Route::delete('deletaFan{id}','OnlookerController@deleteFan');
+Route::delete('deletaRelation{id}','OnlookerController@deleteRelation');
